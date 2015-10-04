@@ -20,7 +20,7 @@ class InterestCalculator
     {
 
 
-        if (is_numeric($sum) && is_numeric($days) && $days >0 && sum >0) {
+        if (is_numeric($sum) && is_numeric($days) && $days >0 && $sum >0) {
             $totalintrest = 0;
             for ($i=1; $i <= $days; $i++) {
                 if (bcmod($i, 3) == 0 && bcmod($i, 5) == 0) {
