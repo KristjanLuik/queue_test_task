@@ -32,15 +32,16 @@ class InterestReceiver
 
 
         $callback = function ($msg) {
-            echo " [x] Received ", $msg->body, "\n";
             if (!empty($msg->body)) {
                 $entry = json_decode($msg->body,true);
                 if (!empty($entry)) {
-                    $entry = InterestCalculator::calculate($entry['sum'],$entry['days']);
+                    $entry = InterestCalculator::calculate(
+                        $entry['sum'],
+                        $entry['days']
+                    );
                     if ($entry) {
-                        $entry['token'] = 'pie-man';
+                        $entry['token'] = 'Luik';
                         InterestBroadcaster::execute(json_encode($entry));
-                        //echo " [x] laheb ", print_r($entry), "\n";
                     }
                 }
             }

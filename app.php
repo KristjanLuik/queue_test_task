@@ -10,6 +10,5 @@ chdir(dirname(__DIR__));
 
 require_once('vendor/autoload.php');
 require_once('InterestReceiver.php');
-require_once('Interestcalculator.php');
 $reciver = new InterestReceiver();
 $reciver->listen();
